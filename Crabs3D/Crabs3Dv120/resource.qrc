@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>Crabs3D/img/c3d_format.png</file>
+        <file>Crabs3D/img/crabs_3d.png</file>
+        <file>Crabs3D/img/crabs_editor.png</file>
+        <file>Crabs3D/img/exit.jpg</file>
+        <file>Crabs3D/img/qtcreator.png</file>
+        <file>Crabs3D/img/question_mark.png</file>
+        <file>CrabsEditor/img/Copy.png</file>
+        <file>CrabsEditor/img/Cut_1.png</file>
+        <file>CrabsEditor/img/New.png</file>
+        <file>CrabsEditor/img/Open.png</file>
+        <file>CrabsEditor/img/Paste.png</file>
+        <file>CrabsEditor/img/Redo.png</file>
+        <file>CrabsEditor/img/Save_1.png</file>
+        <file>CrabsEditor/img/Save_as_1.png</file>
+        <file>CrabsEditor/img/Undo.png</file>
+        <file>Crabs3D/view/down.png</file>
+        <file>Crabs3D/view/left.png</file>
+        <file>Crabs3D/view/play_pause.png</file>
+        <file>Crabs3D/view/right.png</file>
+        <file>Crabs3D/view/up.png</file>
+        <file>Crabs3D/view/zoom_in.png</file>
+        <file>Crabs3D/view/zoom_out.png</file>
+        <file>Crabs3D/view/grid_cyan.png</file>
+        <file>Crabs3D/view/grid_mageda.png</file>
+        <file>Crabs3D/view/grid_yellow.png</file>
+    </qresource>
+</RCC>

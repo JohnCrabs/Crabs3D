@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>810</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>810</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Crabs3D</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/res/Crabs3D/img/crabs_3d.png</normaloff>:/res/Crabs3D/img/crabs_3d.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="clockLabel">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="spaceLabel">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="ClusterWidget" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>175</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>175</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="clusterLayer">
+            <property name="text">
+             <string>&lt;b&gt;Clusters&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="ClusterList">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="sortingEnabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Models">
+            <property name="text">
+             <string>&lt;b&gt;Models&lt;/b&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="ModelList"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="GLWidget" name="ViewWidget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>470</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QWidget" name="ToolWidget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>130</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>130</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="GLWidget" name="AxisWidget" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>130</width>
+               <height>130</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="XY_CheckBox">
+             <property name="text">
+              <string>XY</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="XZ_CheckBox">
+             <property name="text">
+              <string>XZ</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="YZ_CheckBox">
+             <property name="text">
+              <string>YZ</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Velocity_Label">
+             <property name="text">
+              <string>Velocity</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="buddy">
+              <cstring>horizontalSlider</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="horizontalSlider">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>10</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksAbove</enum>
+             </property>
+             <property name="tickInterval">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="MinThreshold_label">
+             <property name="text">
+              <string>MinThreshold</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="buddy">
+              <cstring>MinThreshold</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="MinThreshold">
+             <property name="maximum">
+              <double>1000000.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="MaxThreshold_label">
+             <property name="text">
+              <string>MaxThreshold</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="buddy">
+              <cstring>MaxThreshold</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="MaxThreshold">
+             <property name="maximum">
+              <double>1000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>10.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="ClusterNumber_label">
+             <property name="text">
+              <string>ClusterNumber</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="buddy">
+              <cstring>ClusterNumber</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="ClusterNumber">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>810</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>Import</string>
+     </property>
+     <addaction name="actionC3D"/>
+    </widget>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <widget class="QMenu" name="menuC3D">
+      <property name="title">
+       <string>C3D</string>
+      </property>
+      <addaction name="actionHeader_TXT"/>
+      <addaction name="actionParameter_TXT"/>
+      <addaction name="action3D_Points_TXT"/>
+      <addaction name="actionAnalog_data_TXT"/>
+     </widget>
+     <addaction name="menuC3D"/>
+    </widget>
+    <addaction name="menuImport"/>
+    <addaction name="menuExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout_Crabs3D"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="menuModel">
+     <property name="title">
+      <string>Model</string>
+     </property>
+     <addaction name="actionModelCreate"/>
+     <addaction name="actionSetBones"/>
+     <addaction name="actionCreate_Bones"/>
+    </widget>
+    <addaction name="actionUnits"/>
+    <addaction name="actionCluster_Options"/>
+    <addaction name="separator"/>
+    <addaction name="menuModel"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionCrabsEditor"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <widget class="QMenu" name="menuMove">
+     <property name="title">
+      <string>Move</string>
+     </property>
+     <addaction name="actionUp"/>
+     <addaction name="actionDown"/>
+     <addaction name="actionLeft"/>
+     <addaction name="actionRight"/>
+     <addaction name="actionFront"/>
+     <addaction name="actionBack"/>
+    </widget>
+    <widget class="QMenu" name="menuRotate">
+     <property name="title">
+      <string>Rotate</string>
+     </property>
+     <addaction name="actionX_Rotation"/>
+     <addaction name="actionX_Rotation_2"/>
+     <addaction name="actionY_Rotation"/>
+     <addaction name="actionY_Rotation_2"/>
+     <addaction name="actionZ_Rotation"/>
+     <addaction name="actionZ_Rotation_2"/>
+    </widget>
+    <widget class="QMenu" name="menuZoom">
+     <property name="title">
+      <string>Zoom</string>
+     </property>
+     <addaction name="actionZoom_In"/>
+     <addaction name="actionZoom_Out"/>
+    </widget>
+    <widget class="QMenu" name="menuGrid">
+     <property name="title">
+      <string>Grid</string>
+     </property>
+     <addaction name="actionXY_grid"/>
+     <addaction name="actionXZ_grid"/>
+     <addaction name="actionYZ_grid"/>
+    </widget>
+    <addaction name="menuMove"/>
+    <addaction name="menuRotate"/>
+    <addaction name="menuZoom"/>
+    <addaction name="separator"/>
+    <addaction name="actionPlay_Pause"/>
+    <addaction name="separator"/>
+    <addaction name="menuGrid"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionExit"/>
+   <addaction name="separator"/>
+   <addaction name="actionC3D"/>
+   <addaction name="separator"/>
+   <addaction name="actionUp"/>
+   <addaction name="actionDown"/>
+   <addaction name="actionLeft"/>
+   <addaction name="actionRight"/>
+   <addaction name="separator"/>
+   <addaction name="actionZoom_In"/>
+   <addaction name="actionZoom_Out"/>
+   <addaction name="separator"/>
+   <addaction name="actionPlay_Pause"/>
+   <addaction name="separator"/>
+   <addaction name="actionXY_grid"/>
+   <addaction name="actionXZ_grid"/>
+   <addaction name="actionYZ_grid"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/img/exit.jpg</normaloff>:/res/Crabs3D/img/exit.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionC3D">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/img/c3d_format.png</normaloff>:/res/Crabs3D/img/c3d_format.png</iconset>
+   </property>
+   <property name="text">
+    <string>C3D</string>
+   </property>
+  </action>
+  <action name="actionHeader_TXT">
+   <property name="text">
+    <string>Header TXT</string>
+   </property>
+  </action>
+  <action name="actionParameter_TXT">
+   <property name="text">
+    <string>Parameter TXT</string>
+   </property>
+  </action>
+  <action name="action3D_Points_TXT">
+   <property name="text">
+    <string>3D Points CSV</string>
+   </property>
+  </action>
+  <action name="actionAnalog_data_TXT">
+   <property name="text">
+    <string>Analog Data CSV</string>
+   </property>
+  </action>
+  <action name="actionAbout_Crabs3D">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/img/crabs_3d.png</normaloff>:/res/Crabs3D/img/crabs_3d.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Crabs3D</string>
+   </property>
+  </action>
+  <action name="actionCluster_Options">
+   <property name="text">
+    <string>Cluster Options</string>
+   </property>
+  </action>
+  <action name="actionCrabsEditor">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/img/crabs_editor.png</normaloff>:/res/Crabs3D/img/crabs_editor.png</iconset>
+   </property>
+   <property name="text">
+    <string>CrabsEditor</string>
+   </property>
+  </action>
+  <action name="actionModelCreate">
+   <property name="text">
+    <string>Create</string>
+   </property>
+  </action>
+  <action name="actionUp">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/up.png</normaloff>:/res/Crabs3D/view/up.png</iconset>
+   </property>
+   <property name="text">
+    <string>Up</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Up</string>
+   </property>
+  </action>
+  <action name="actionDown">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/down.png</normaloff>:/res/Crabs3D/view/down.png</iconset>
+   </property>
+   <property name="text">
+    <string>Down</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Down</string>
+   </property>
+  </action>
+  <action name="actionLeft">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/left.png</normaloff>:/res/Crabs3D/view/left.png</iconset>
+   </property>
+   <property name="text">
+    <string>Left</string>
+   </property>
+   <property name="shortcut">
+    <string>Left</string>
+   </property>
+  </action>
+  <action name="actionRight">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/right.png</normaloff>:/res/Crabs3D/view/right.png</iconset>
+   </property>
+   <property name="text">
+    <string>Right</string>
+   </property>
+   <property name="shortcut">
+    <string>Right</string>
+   </property>
+  </action>
+  <action name="actionX_Rotation">
+   <property name="text">
+    <string>X Rotation +</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+8</string>
+   </property>
+  </action>
+  <action name="actionX_Rotation_2">
+   <property name="text">
+    <string>X Rotation -</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionY_Rotation">
+   <property name="text">
+    <string>Y Rotation +</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
+   </property>
+  </action>
+  <action name="actionY_Rotation_2">
+   <property name="text">
+    <string>Y Rotation -</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+6</string>
+   </property>
+  </action>
+  <action name="actionZ_Rotation">
+   <property name="text">
+    <string>Z Rotation +</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+9</string>
+   </property>
+  </action>
+  <action name="actionZ_Rotation_2">
+   <property name="text">
+    <string>Z Rotation -</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+7</string>
+   </property>
+  </action>
+  <action name="actionZoom_In">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/zoom_in.png</normaloff>:/res/Crabs3D/view/zoom_in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+   <property name="shortcut">
+    <string>*</string>
+   </property>
+  </action>
+  <action name="actionZoom_Out">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/zoom_out.png</normaloff>:/res/Crabs3D/view/zoom_out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+   <property name="shortcut">
+    <string>/</string>
+   </property>
+  </action>
+  <action name="actionPlay_Pause">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/play_pause.png</normaloff>:/res/Crabs3D/view/play_pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>Play/Pause</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionFront">
+   <property name="text">
+    <string>Front</string>
+   </property>
+   <property name="shortcut">
+    <string>Up</string>
+   </property>
+  </action>
+  <action name="actionBack">
+   <property name="text">
+    <string>Back</string>
+   </property>
+   <property name="shortcut">
+    <string>Down</string>
+   </property>
+  </action>
+  <action name="actionXY_grid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/grid_yellow.png</normaloff>:/res/Crabs3D/view/grid_yellow.png</iconset>
+   </property>
+   <property name="text">
+    <string>XY Grid</string>
+   </property>
+  </action>
+  <action name="actionXZ_grid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/grid_mageda.png</normaloff>:/res/Crabs3D/view/grid_mageda.png</iconset>
+   </property>
+   <property name="text">
+    <string>XZ Grid</string>
+   </property>
+  </action>
+  <action name="actionYZ_grid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/Crabs3D/view/grid_cyan.png</normaloff>:/res/Crabs3D/view/grid_cyan.png</iconset>
+   </property>
+   <property name="text">
+    <string>YZ Grid</string>
+   </property>
+  </action>
+  <action name="actionUnits">
+   <property name="text">
+    <string>Units</string>
+   </property>
+  </action>
+  <action name="actionSetBones">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Set Bones</string>
+   </property>
+  </action>
+  <action name="actionCreate_Bones">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Create Bones</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GLWidget</class>
+   <extends>QWidget</extends>
+   <header>glwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
