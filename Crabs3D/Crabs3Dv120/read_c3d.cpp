@@ -9,6 +9,7 @@
 /*               Templates               */
 /*****************************************/
 
+//Finds out the system reading Endian
 namespace sys_endian {
 
     const unsigned one = 1U;
