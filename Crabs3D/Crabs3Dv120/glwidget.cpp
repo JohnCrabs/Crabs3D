@@ -29,9 +29,6 @@ void GLWidget::initializeGL() {
     glClearColor(0.0, 0.0, 0.0, 1.0); //Set screen color to black
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_DEPTH_TEST); //Enable depth
-    //glEnable(GL_LIGHT0); //Enable light and choose GL_LIGHT0
-    //glEnable(GL_LIGHTING); //Enable Lighting
-    //glEnable(GL_COLOR_MATERIAL); //Enable Color Material
 }
 
 //Draw to the OpenGl window
