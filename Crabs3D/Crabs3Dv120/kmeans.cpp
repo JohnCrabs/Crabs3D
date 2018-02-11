@@ -158,9 +158,6 @@ void KMeans::CleanUp() {
         free(cluster[i].cloud.x);
         free(cluster[i].cloud.y);
         free(cluster[i].cloud.z);
-
-        //delete[] cluster[i].cloud.name; //segmentation fault if exist
     }
-    //free(cluster); //segmentation fault if exist
 }
 
